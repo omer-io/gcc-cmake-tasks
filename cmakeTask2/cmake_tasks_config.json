@@ -1,0 +1,86 @@
+{
+    "app_logging": {
+        "severity": "trace",
+        "file": true,
+        "console": true
+    },
+    "core": 1,
+    "markets": [
+        {
+            "market_type": "deribit",
+            "interfaces": {
+                "websockets": {
+                    "websocket_url": "wss://test.deribit.com/ws/api/v2",
+                    "huobi": {
+                        "order_url": "wss://",
+                        "kline_url": "wss://"
+                    }
+                },
+                "https": {
+                    "https_url": "https://"
+                }
+            },
+            "order_entry_management": {
+                "uuid": "",
+                "order_id": 0,
+                "trading_credential_title": "ftx_sub_1"
+            },
+            "deribit_heartbeat_interval": 20,
+            "symbols": [
+                {
+                    "currency": "BTC",
+                    "instruments": [
+                        "BTC-29SEP23-15000-C",
+                        "BTC-29SEP23-60000-P"
+                    ],
+                    "book_depth": 10,
+                    "credential_title": "ftx_sub_1",
+                    "additional": {
+                        "huobi": {
+                            "kline_index_period": "one_min",
+                            "kline_markprice_period": "one_min",
+                            "huobi_usdt_business_type": "futures"
+                        },
+                        "ftx": {
+                            "interested_in_future": true,
+                            "interested_in_spot": false
+                        },
+                        "binance": {
+                            "interested_in_future": true,
+                            "interested_in_spot": false
+                        },
+                        "deribit": {
+                            "currency_type": "usd",
+                            "cancel_on_disconnect": true,
+                            "interested_in_future": true,
+                            "interested_in_option": false,
+                            "interested_in_future_combo": false,
+                            "interested_in_option_combo": false
+                        }
+                    },
+                    "channel": {
+                        "QUOTE": false,
+                        "TRADE": false,
+                        "INDEX": false,
+                        "TICKER": false,
+                        "MARKETS": false,
+                        "MARKPRICE": false
+                    }
+                }
+            ]
+        }
+    ],
+    "credentials": [
+        {
+            "credential_title": "ftx_sub_1",
+            "api_key": "",
+            "secret_key": "",
+            "account_name": ""
+        }
+    ],
+    "reconnection": {
+        "retry_count": 5,
+        "retry_interval": 5,
+        "reception_timeout": 30
+    }
+}

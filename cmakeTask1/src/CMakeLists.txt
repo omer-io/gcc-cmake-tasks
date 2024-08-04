@@ -1,0 +1,5 @@
+project(mymathlib)
+set(LIB_SOURCES mymath.cpp)
+# include_directories(${CMAKE_SOURCE_DIR}/include)
+add_library(mymathlib STATIC ${LIB_SOURCES})
+# target_include_directories(mymathlib PUBLIC ${CMAKE_SOURCE_DIR}/include)
